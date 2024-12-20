@@ -5,7 +5,7 @@ const {VoiceResource} = require('@seven.io/client')
 module.exports = function (RED) {
     'use strict'
 
-    function Sms77VoiceNode(config) {
+    function SevenVoiceNode(config) {
         RED.nodes.createNode(this, config)
 
         const node = this
@@ -47,5 +47,5 @@ module.exports = function (RED) {
         })
     }
 
-    RED.nodes.registerType('sms77-voice', Sms77VoiceNode)
+    RED.nodes.registerType('seven-voice', SevenVoiceNode)
 }

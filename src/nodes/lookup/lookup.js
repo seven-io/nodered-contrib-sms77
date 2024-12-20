@@ -5,7 +5,7 @@ const {LookupResource} = require('@seven.io/client')
 module.exports = function (RED) {
     'use strict'
 
-    function Sms77LookupNode(config) {
+    function SevenLookupNode(config) {
         RED.nodes.createNode(this, config)
 
         const node = this
@@ -31,5 +31,5 @@ module.exports = function (RED) {
         })
     }
 
-    RED.nodes.registerType('sms77-lookup', Sms77LookupNode)
+    RED.nodes.registerType('seven-lookup', SevenLookupNode)
 }

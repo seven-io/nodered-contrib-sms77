@@ -5,7 +5,7 @@ const {SmsResource} = require('@seven.io/client')
 module.exports = function (RED) {
     'use strict'
 
-    function Sms77SmsNode(config) {
+    function SevenSmsNode(config) {
         RED.nodes.createNode(this, config)
 
         const node = this
@@ -49,5 +49,5 @@ module.exports = function (RED) {
         })
     }
 
-    RED.nodes.registerType('sms77-sms', Sms77SmsNode)
+    RED.nodes.registerType('seven-sms', SevenSmsNode)
 }

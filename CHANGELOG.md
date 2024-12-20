@@ -2,6 +2,7 @@
 ==================
 * removed deprecated parameters
 * make sms/voice return json
+* renamed nodes
 
 3.4.0
 ==================

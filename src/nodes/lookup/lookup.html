@@ -1,14 +1,14 @@
 <script type='text/javascript'>
     try {
-        RED.nodes.registerType('sms77-lookup', {
+        RED.nodes.registerType('seven-lookup', {
             category: 'mobile',
             color: '#01C965',
             defaults: {
                 config: {
                     required: true,
-                    type: 'sms77-config',
+                    type: 'seven-config',
                 },
-                name: {value: 'sms77-lookup'},
+                name: {value: 'seven-lookup'},
                 numbers: {},
                 lookupType: {required: true},
             },
@@ -21,34 +21,34 @@
     }
 </script>
 
-<script data-template-name='sms77-lookup' type='text/html'>
+<script data-template-name='seven-lookup' type='text/html'>
     <div class='form-row'>
-        <label for='node-input-config' data-i18n='sms77-lookup.config'><i
+        <label for='node-input-config' data-i18n='seven-lookup.config'><i
                 class='fa fa-user'></i></label>
         <input id='node-input-config'>
     </div>
 
     <div class='form-row'>
-        <label for='node-input-numbers' data-i18n='sms77-lookup.numbers'><i
+        <label for='node-input-numbers' data-i18n='seven-lookup.numbers'><i
                 class='fa fa-mobile'
                 style='font-size: 160%'></i></label>
         <input id='node-input-numbers' placeholder='msg.topic'/>
     </div>
 
     <div class='form-row'>
-        <label for='node-input-lookupType' data-i18n='sms77-lookup.type'><i
+        <label for='node-input-lookupType' data-i18n='seven-lookup.type'><i
                 class='fa fa-microchip'></i></label>
         <select id='node-input-lookupType' required>
-            <option value='cnam' data-i18n='sms77-lookup.cnam'></option>
-            <option value='format' data-i18n='sms77-lookup.format'></option>
-            <option value='hlr' data-i18n='sms77-lookup.hlr'></option>
-            <option value='mnp' data-i18n='sms77-lookup.mnp'></option>
+            <option value='cnam' data-i18n='seven-lookup.cnam'></option>
+            <option value='format' data-i18n='seven-lookup.format'></option>
+            <option value='hlr' data-i18n='seven-lookup.hlr'></option>
+            <option value='mnp' data-i18n='seven-lookup.mnp'></option>
         </select>
     </div>
 
     <div class='form-row'>
-        <label for='node-input-name' data-i18n='sms77-lookup.name'>
+        <label for='node-input-name' data-i18n='seven-lookup.name'>
             <i class='fa fa-tag'></i></label>
-        <input id='node-input-name' placeholder='sms77-lookup'/>
+        <input id='node-input-name' placeholder='seven-lookup'/>
     </div>
 </script>

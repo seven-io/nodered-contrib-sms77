@@ -1,5 +1,5 @@
 <script type='text/javascript'>
-    RED.nodes.registerType('sms77-config', {
+    RED.nodes.registerType('seven-config', {
         category: 'config',
         credentials: {
             apiKey: {
@@ -9,7 +9,7 @@
         },
         defaults: {
             name: {
-                value: RED._('nodered-contrib-sms77/sms77-config:sms77-config._defaults.name'),
+                value: RED._('nodered-contrib-seven/seven-config:seven-config._defaults.name'),
             },
         },
         label: function () {
@@ -18,15 +18,15 @@
     })
 </script>
 
-<script data-template-name='sms77-config' type='text/html'>
+<script data-template-name='seven-config' type='text/html'>
     <div class='form-row'>
-        <label for='node-config-input-apiKey' data-i18n='sms77-config.apiKey'><i
+        <label for='node-config-input-apiKey' data-i18n='seven-config.apiKey'><i
                 class='fa fa-lock'></i></label>
         <input type='password' id='node-config-input-apiKey'/>
     </div>
 
     <div class='form-row'>
-        <label for='node-config-input-name' data-i18n='sms77-config.name'><i
+        <label for='node-config-input-name' data-i18n='seven-config.name'><i
                 class='fa fa-tag'></i></label>
         <input id='node-config-input-name'/>
     </div>

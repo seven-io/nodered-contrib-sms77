@@ -1,12 +1,12 @@
 module.exports = function (RED) {
-    function Sms77ConfigNode(config) {
+    function SevenConfigNode(config) {
         RED.nodes.createNode(this, config);
 
         this.apiKey = config.apiKey;
         this.name = config.name;
     }
 
-    RED.nodes.registerType('sms77-config', Sms77ConfigNode, {
+    RED.nodes.registerType('seven-config', SevenConfigNode, {
         credentials: {
             apiKey: {
                 type: 'password',
