@@ -3,6 +3,7 @@
 * removed deprecated parameters
 * make sms/voice return json
 * renamed nodes
+* add RCS lookup
 
 3.4.0
 ==================

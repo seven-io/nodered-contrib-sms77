@@ -20,7 +20,7 @@ module.exports = function (RED) {
 
             try {
                 const response = await resource[type]({
-                    numbers: [nodeUtil.emptyStringFallback('numbers', msg.topic)],
+                    numbers: nodeUtil.emptyStringFallback('numbers', msg.topic).split(','),
                 })
                 nodeUtil.status(`Lookup of type "${type}" performed.`)
                 send({...msg, payload: response})

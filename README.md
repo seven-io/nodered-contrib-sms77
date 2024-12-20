@@ -50,19 +50,7 @@ sorting [analytics](https://www.seven.io/en/docs/gateway/http-api/analytics/).
 *Delay*: Set a custom date for time-delayed dispatch in the form of a Unix timestamp or a
 date/time string formatted as yyyy-mm-dd hh:ii.
 
-*Return JSON?*: If enabled, the API returns a detailed JSON response.
-
-*Unicode?*: If enabled, enforce unicode encoding ignoring API detection.
-
 *Flash?*: If enabled, SMS get sent as [flash](https://help.seven.io/en/flash-sms).
-
-*Details?*: If enabled, the API returns dispatch specific information - is ignored
-if `json` is enabled.
-
-*UTF8?*: If enabled, enforce UTF8 encoding ignoring API detection.
-
-*No Reload?*: If enabled, dispatch of duplicate SMS, text and recipient alike within 180
-seconds, gets allowed.
 
 *Performance Tracking?*: If enabled, links found in the text get replaced with a shortened
 URL and [click tracking](https://help.seven.io/en/performance-tracking-1) enabled.
@@ -84,10 +72,6 @@ Use this node for converting a text to speech, call a number and read the messag
 own [virtual number](https://help.seven.io/en/ordering-your-own-number) or
 a [shared number](https://www.seven.io/en/docs/glossary/shared-numbers/).
 
-*Is XML?*: If enabled, the API parses the text as XML format.
-
-*Return JSON?*: If enabled, the API returns a detailed JSON response.
-
 *Ringtime*: Define how long to initiate the call.
 
 *Name*: An arbitrary name for the node helpful for identification.
@@ -100,9 +84,6 @@ Use this node for performing number lookups.
 *Number(s)**: The phone number(s) to look up separated by comma.
 
 *Type**: The lookup type to perform.
-
-*Return JSON?*: If enabled, the API returns a detailed JSON response for MNP lookups. All
-other types return JSON by default.
 
 *Name*: An arbitrary name for the node helpful for identification.
 
