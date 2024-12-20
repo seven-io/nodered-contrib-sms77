@@ -19,7 +19,7 @@ module.exports = function (RED) {
                 flash: 'true' === config.flash,
                 foreign_id: nodeUtil.emptyStringFallback('foreign_id'),
                 from: nodeUtil.emptyStringFallback('from'),
-                json: 'true' === config.json,
+                json: true,
                 label: nodeUtil.emptyStringFallback('label'),
                 performance_tracking: 'true' === config.performance_tracking,
                 text: nodeUtil.emptyStringFallback('message', msg.payload),
@@ -30,9 +30,7 @@ module.exports = function (RED) {
 
             try {
                 const response = await client.sms(params)
-                let code = response
-                if (params.json) code = response.success
-
+                const code = response.success
                 const succeeded = [100, 101].includes(Number(code))
 
                 if (!succeeded) return nodeUtil.onDone(done, JSON.stringify(response), msg)
@@ -40,12 +38,9 @@ module.exports = function (RED) {
                 let failed = 0
                 let sent = 1
 
-                if (params.json) {
-                    sent = 0
+                sent = 0
 
-                    for (const msg of response.messages)
-                        true === msg.success ? sent++ : failed++
-                }
+                for (const msg of response.messages) true === msg.success ? sent++ : failed++
 
                 nodeUtil.status(`${sent} sent | ${failed} failed`)
                 nodeUtil.onSuccess(send, msg, response, done)
