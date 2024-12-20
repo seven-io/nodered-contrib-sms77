@@ -15,7 +15,6 @@
         "recipients": "Recipient(s)",
         "ttl": "TTL",
         "udh": "UDH",
-        "unicode": "Unicode?",
         "utf8": "UTF-8?"
     }
 }
