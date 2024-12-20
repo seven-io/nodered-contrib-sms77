@@ -19,7 +19,6 @@ module.exports = function (RED) {
                 json: 'true' === config.json,
                 ringtime: nodeUtil.emptyStringFallback('ringtime'),
                 text: nodeUtil.emptyStringFallback('message', msg.payload),
-                xml: 'true' === config.xml,
             }
             const recipients = nodeUtil.emptyStringFallback('recipients', msg.topic)
 

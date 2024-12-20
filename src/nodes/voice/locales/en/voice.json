@@ -6,7 +6,6 @@
         "message": "Message",
         "name": "Name",
         "recipients": "Recipient(s)",
-        "ringtime": "Ringtime",
-        "xml": "Is XML?"
+        "ringtime": "Ringtime"
     }
 }
