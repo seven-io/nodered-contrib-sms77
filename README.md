@@ -20,17 +20,17 @@ Run the following command in your Node-RED user directory - usually `~/.node-red
 
 ## Request Options
 
-### sms77-config node
+### seven-config node
 
 *API Key*: An API key from [seven](https://help.seven.io/en/api-key-access) - create one in
 your [developer dashboard](https://app.seven.io/developer).
 
 *Name*: An arbitrary name for the node, helpful if you use multiple configurations.
 
-### sms77-sms node
+### seven-sms node
 Use this node for sending SMS.
 
-*Config**: A sms77-config node.
+*Config**: A seven-config node.
 
 *Message**: The SMS text which defaults to `msg.payload`. May not exceed 1520 characters.
 
@@ -69,10 +69,10 @@ URL and [click tracking](https://help.seven.io/en/performance-tracking-1) enable
 
 *Name*: An arbitrary name for the node helpful for identification.
 
-### sms77-voice node
+### seven-voice node
 Use this node for converting a text to speech, call a number and read the message out loud.
 
-*Config**: A sms77-config node.
+*Config**: A seven-config node.
 
 *Message**: The text to convert to voice which defaults to `msg.payload`. May not exceed
 10.000 characters.
@@ -92,10 +92,10 @@ a [shared number](https://www.seven.io/en/docs/glossary/shared-numbers/).
 
 *Name*: An arbitrary name for the node helpful for identification.
 
-### sms77-lookup node
+### seven-lookup node
 Use this node for performing number lookups.
 
-*Config**: A sms77-config node.
+*Config**: A seven-config node.
 
 *Number(s)**: The phone number(s) to look up separated by comma.
 
