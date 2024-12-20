@@ -9,7 +9,7 @@
     "node-fetch": "^2.7.0",
     "sms77-client": "^2.27.0"
   },
-  "description": "sms77 node collection for Node-RED.",
+  "description": "seven node collection for Node-RED.",
   "name": "@seven.io/nodered",
   "node-red": {
     "nodes": {
@@ -25,8 +25,8 @@
     "hlr",
     "mnp",
     "node-red",
+    "seven",
     "sms",
-    "sms77",
     "text2speech",
     "tts"
   ],

@@ -1,3 +1,8 @@
+4.0.0
+==================
+* removed deprecated parameters
+* make sms/voice return json
+
 3.4.0
 ==================
 * add parameter `ringtime` to voice node
