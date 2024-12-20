@@ -28,7 +28,6 @@ module.exports = function (RED) {
                 to: nodeUtil.emptyStringFallback('recipients', msg.topic),
                 ttl: nodeUtil.emptyStringFallback('ttl'),
                 udh: nodeUtil.emptyStringFallback('udh'),
-                utf8: 'true' === config.utf8,
             }
 
             try {
