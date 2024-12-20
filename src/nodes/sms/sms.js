@@ -1,5 +1,6 @@
 const Util = require('../../Util')
 const NodeUtil = require('../../NodeUtil')
+const {SmsResource} = require('@seven.io/client')
 
 module.exports = function (RED) {
     'use strict'
@@ -10,26 +11,24 @@ module.exports = function (RED) {
         const node = this
         const nodeUtil = new NodeUtil(node, config)
         const client = Util.initClient(RED, config)
+        const resource = new SmsResource(client)
 
         this.on('input', async function onInput(msg, send, done) {
             if (!send) send = () => node.send.apply(node, [msg, send, done]) // If this is pre-1.0, 'send' will be undefined, so fallback to node.send
 
-            const params = {
-                delay: nodeUtil.emptyStringFallback('delay'),
-                flash: 'true' === config.flash,
-                foreign_id: nodeUtil.emptyStringFallback('foreign_id'),
-                from: nodeUtil.emptyStringFallback('from'),
-                json: true,
-                label: nodeUtil.emptyStringFallback('label'),
-                performance_tracking: 'true' === config.performance_tracking,
-                text: nodeUtil.emptyStringFallback('message', msg.payload),
-                to: nodeUtil.emptyStringFallback('recipients', msg.topic),
-                ttl: nodeUtil.emptyStringFallback('ttl'),
-                udh: nodeUtil.emptyStringFallback('udh'),
-            }
-
             try {
-                const response = await client.sms(params)
+                const response = await resource.dispatch({
+                    delay: nodeUtil.emptyStringFallback('delay'),
+                    flash: 'true' === config.flash,
+                    foreign_id: nodeUtil.emptyStringFallback('foreign_id'),
+                    from: nodeUtil.emptyStringFallback('from'),
+                    label: nodeUtil.emptyStringFallback('label'),
+                    performance_tracking: 'true' === config.performance_tracking,
+                    text: nodeUtil.emptyStringFallback('message', msg.payload),
+                    to: nodeUtil.emptyStringFallback('recipients', msg.topic),
+                    ttl: nodeUtil.emptyStringFallback('ttl'),
+                    udh: nodeUtil.emptyStringFallback('udh'),
+                })
                 const code = response.success
                 const succeeded = [100, 101].includes(Number(code))
 

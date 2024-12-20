@@ -5,9 +5,9 @@
     "url": "https://github.com/seven-io/node-red/issues"
   },
   "dependencies": {
-    "globalthis": "^1.0.3",
+    "globalthis": "^1.0.4",
     "node-fetch": "^2.7.0",
-    "sms77-client": "^2.27.0"
+    "@seven.io/client": "^3.0.2"
   },
   "description": "seven node collection for Node-RED.",
   "name": "@seven.io/nodered",

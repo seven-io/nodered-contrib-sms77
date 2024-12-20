@@ -1,5 +1,6 @@
 const NodeUtil = require('../../NodeUtil')
 const Util = require('../../Util')
+const {VoiceResource} = require('@seven.io/client')
 
 module.exports = function (RED) {
     'use strict'
@@ -16,15 +17,15 @@ module.exports = function (RED) {
 
             const params = {
                 from: nodeUtil.emptyStringFallback('from'),
-                json: true,
                 ringtime: nodeUtil.emptyStringFallback('ringtime'),
                 text: nodeUtil.emptyStringFallback('message', msg.payload),
             }
             const recipients = nodeUtil.emptyStringFallback('recipients', msg.topic)
+            const resource = new VoiceResource(client)
 
             for (const to of recipients.split(',')) {
                 try {
-                    const response = await client.voice({...params, to})
+                    const response = await resource.dispatch({...params, to})
                     const code = response.success
                     const succeeded = [100, 101].includes(Number(code))
 
