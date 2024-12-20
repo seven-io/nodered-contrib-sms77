@@ -4,6 +4,7 @@
 * make sms/voice return json
 * renamed nodes
 * add RCS lookup
+* add RCS dispatch
 
 3.4.0
 ==================

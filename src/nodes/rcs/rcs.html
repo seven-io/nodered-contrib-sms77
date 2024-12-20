@@ -1,0 +1,155 @@
+<script type='text/javascript'>
+    try {
+        RED.nodes.registerType('seven-rcs', {
+            category: 'mobile',
+            color: '#01C965',
+            defaults: {
+                config: {
+                    required: true,
+                    type: 'seven-config',
+                },
+                delay: {},
+                from: {},
+                foreign_id: {},
+                label: {},
+                message: {},
+                name: {
+                    value: 'seven-rcs',
+                },
+                performance_tracking: {},
+                recipients: {},
+            },
+            icon: 'envelope.png',
+            inputs: 1,
+            oneditprepare() {
+                this.editor = RED.editor.createEditor({
+                    id: 'node-input-message-editor',
+                    lineNumbers: false,
+                    mode: 'ace/mode/text',
+                    options: {
+                        showPrintMargin: false
+                    },
+                    value: $('#node-input-message').val(),
+                })
+
+                const $expandEditor = $('#node-seven-expand-editor')
+
+                this.editor.focus()
+
+                RED.popover.tooltip(
+                    $expandEditor, RED._('node-red:common.label.expand'))
+
+                $expandEditor.on('click', ev => {
+                    ev.preventDefault()
+
+                    const complete = (value, cursor) => {
+                        this.editor.setValue(value, -1)
+
+                        this.editor.gotoLine(cursor.row + 1, cursor.column, false)
+
+                        setTimeout(() => this.editor.focus(), 300)
+                    }
+
+                    RED.editor.editText({
+                        complete,
+                        cursor: this.editor.getCursorPosition(),
+                        mode: 'text',
+                        value: this.editor.getValue(),
+                        width: 'Infinity',
+                    })
+                })
+            },
+            oneditsave() {
+                $('#node-input-message').val(this.editor.getValue())
+
+                this.editor.destroy()
+
+                delete this.editor
+            },
+            outputs: 1,
+        })
+    } catch (seven_rcs_RegisterTpl) {
+        console.error({seven_rcs_RegisterTpl})
+    }
+</script>
+
+<script data-template-name='seven-rcs' type='text/html'>
+    <div class='form-row'>
+        <label for='node-input-config' data-i18n='seven-rcs.config'><i
+                class='fa fa-user'></i></label>
+        <input id='node-input-config'>
+    </div>
+
+    <div class='form-row' style='position: relative; margin-bottom: 0;'>
+        <label for='node-input-message'>
+            <i class='fa fa-file-code-o'></i>
+
+            <span data-i18n='seven-rcs.message'></span>
+        </label>
+
+        <input type='hidden' id='node-input-message' autofocus/>
+
+        <div style='position: absolute; right: 0; display: inline-block;
+        text-align: right; font-size: 0.8em;'>
+            <button id='node-seven-expand-editor'
+                    class='red-ui-button red-ui-button-small'>
+                <i class='fa fa-expand'></i>
+            </button>
+        </div>
+    </div>
+
+    <div class='form-row node-text-editor-row'>
+        <div style='height: 250px; min-height:150px;' class='node-text-editor'
+             id='node-input-message-editor'></div>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-recipients' data-i18n='seven-rcs.recipients'><i
+                class='fa fa-mobile'
+                style='font-size: 160%'></i></label>
+        <input id='node-input-recipients' placeholder='msg.topic'/>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-from' data-i18n='seven-rcs.from'><i
+                class='fa fa-envelope'></i></label>
+        <input id='node-input-from' maxlength='16'/>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-label' data-i18n='seven-rcs.label'><i
+                class='fa fa-tachometer'></i></label>
+        <input id='node-input-label' maxlength='100'/>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-foreign_id' data-i18n='seven-rcs.foreignId'><i
+                class='fa fa-tachometer'></i></label>
+        <input id='node-input-foreign_id' maxlength='64'/>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-delay' data-i18n='seven-rcs.delay'><i
+                class='fa fa-tachometer'></i>
+        </label>
+        <input id='node-input-delay'/>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-performance_tracking'
+               data-i18n='seven-rcs.performanceTracking'><i
+                class='fa fa-microchip'></i></label>
+        <select id='node-input-performance_tracking'>
+            <option value='true'
+                    data-i18n='seven-config.true'></option>
+            <option value='false'
+                    data-i18n='seven-config.false'></option>
+        </select>
+    </div>
+
+    <div class='form-row'>
+        <label for='node-input-name' data-i18n='seven-rcs.name'>
+            <i class='fa fa-tag'></i></label>
+        <input id='node-input-name' placeholder='seven-rcs'/>
+    </div>
+</script>

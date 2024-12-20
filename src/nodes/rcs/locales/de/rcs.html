@@ -1,0 +1,30 @@
+<script data-help-name='seven-rcs' type='text/html'>
+    RCS-Versand via seven.
+    <hr/>
+
+    <p><b>Eigenschaften</b></p>
+
+    <code>Nachricht</code> Der Nachrichteninhalt für den Versand.
+    Wenn nicht gesetzt, wird der Wert von <i>msg.payload</i> übernommen.
+    <br/>
+
+    <code>Ziele</code> Rufnummer oder Kontakt/Gruppe aus dem Adressbuch bei seven.
+    Wenn nicht gesetzt, wird der Wert von <i>msg.topic</i> übernommen.
+    <br/>
+
+    <code>Versandzeitpunkt</code> Versand verzögern; erfordert einen UNIX-Zeitstempel oder ein Datum formatiert als yyyy-mm-dd hh:ii
+    - beispielsweise 1141511104 oder 2025-03-04 23:25:04.
+    <br/>
+
+    <code>Label</code> Ein eigenes Label für Analytics setzen.
+    <br/>
+
+    <code>Performance Tracking?</code> Wenn
+    <i>wahr</i>, werden im Text enthaltene Links mit einem URL-Shortener ersetzt und Click Tracking aktiviert.
+    <br/>
+
+    <code>Foreign
+        ID</code> Einen eigenen Wert angeben, welcher bei DLR-Callbacks etc. zurückgegeben wird.
+    Die maximale Länge beträgt 64 Zeichen bestehend aus <i>a-z, A-Z, 0-9, .-_@</i>.
+    <br/>
+</script>

@@ -43,10 +43,6 @@ sorting [analytics](https://www.seven.io/en/docs/gateway/http-api/analytics/).
 
 *Foreign ID*: Optionally set a custom value returned in callbacks.
 
-*UDH*: Set a custom user data header.
-
-*TTL*: Set a custom time to live in minutes.
-
 *Delay*: Set a custom date for time-delayed dispatch in the form of a Unix timestamp or a
 date/time string formatted as yyyy-mm-dd hh:ii.
 
@@ -73,6 +69,30 @@ own [virtual number](https://help.seven.io/en/ordering-your-own-number) or
 a [shared number](https://www.seven.io/en/docs/glossary/shared-numbers/).
 
 *Ringtime*: Define how long to initiate the call.
+
+*Name*: An arbitrary name for the node helpful for identification.
+
+### seven-rcs node
+Use this node for sending RCS.
+
+*Config**: A seven-config node.
+
+*Message**: The SMS text which defaults to `msg.payload`. May not exceed 1520 characters.
+
+*Recipient**: Phone number or contact/group - defaulting to `msg.topic`.
+
+*From (Sender)*: Set an optional agent id.
+
+*Label*: Set a custom label for
+sorting [analytics](https://www.seven.io/en/docs/gateway/http-api/analytics/).
+
+*Foreign ID*: Optionally set a custom value returned in callbacks.
+
+*Delay*: Set a custom date for time-delayed dispatch in the form of a Unix timestamp or a
+date/time string formatted as yyyy-mm-dd hh:ii.
+
+*Performance Tracking?*: If enabled, links found in the text get replaced with a shortened
+URL and [click tracking](https://help.seven.io/en/performance-tracking-1) enabled.
 
 *Name*: An arbitrary name for the node helpful for identification.
 

@@ -1,0 +1,13 @@
+{
+    "seven-rcs": {
+        "config": "Konfiguration",
+        "delay": "Versandzeitpunkt",
+        "foreignId": "Foreign ID",
+        "from": "Von",
+        "label": "Label",
+        "message": "Nachricht",
+        "name": "Name",
+        "performanceTracking": "Performance Tracking?",
+        "recipients": "Ziel"
+    }
+}
