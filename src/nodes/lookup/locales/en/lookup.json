@@ -4,7 +4,6 @@
         "config": "Config",
         "format": "Format",
         "hlr": "HLR",
-        "json": "Return JSON?",
         "mnp": "MNP",
         "name": "Name",
         "numbers": "Number(s)",

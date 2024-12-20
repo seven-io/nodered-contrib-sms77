@@ -20,7 +20,6 @@ module.exports = function (RED) {
 
             try {
                 const response = await resource[type]({
-                    json: 'true' === config.json,
                     numbers: [nodeUtil.emptyStringFallback('numbers', msg.topic)],
                 })
                 nodeUtil.status(`Lookup of type "${type}" performed.`)

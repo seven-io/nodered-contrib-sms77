@@ -2,7 +2,6 @@
     "sms77-voice": {
         "config": "Konfiguration",
         "from": "Von",
-        "json": "JSON?",
         "message": "Nachricht",
         "name": "Name",
         "recipients": "Anrufziel(e)",
