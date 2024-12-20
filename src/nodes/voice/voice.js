@@ -16,7 +16,7 @@ module.exports = function (RED) {
 
             const params = {
                 from: nodeUtil.emptyStringFallback('from'),
-                json: 'true' === config.json,
+                json: true,
                 ringtime: nodeUtil.emptyStringFallback('ringtime'),
                 text: nodeUtil.emptyStringFallback('message', msg.payload),
             }
@@ -25,7 +25,7 @@ module.exports = function (RED) {
             for (const to of recipients.split(',')) {
                 try {
                     const response = await client.voice({...params, to})
-                    const code = params.json ? response.success : response.split('\n')[0]
+                    const code = response.success
                     const succeeded = [100, 101].includes(Number(code))
 
                     if (!succeeded) return nodeUtil.onDone(done, JSON.stringify(response), msg)
@@ -33,12 +33,9 @@ module.exports = function (RED) {
                     let failed = 0
                     let sent = 1
 
-                    if (params.json) {
-                        sent = 0
+                    sent = 0
 
-                        for (const msg of response.messages)
-                            true === msg.success ? sent++ : failed++
-                    }
+                    for (const msg of response.messages) true === msg.success ? sent++ : failed++
 
                     nodeUtil.status(`${sent} calls | ${failed} failed`)
                     nodeUtil.onSuccess(send, msg, response, done)
