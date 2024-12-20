@@ -13,10 +13,11 @@
   "name": "@seven.io/nodered",
   "node-red": {
     "nodes": {
-      "sms77-config": "src/nodes/config/config.js",
-      "sms77-lookup": "src/nodes/lookup/lookup.js",
-      "sms77-sms": "src/nodes/sms/sms.js",
-      "sms77-voice": "src/nodes/voice/voice.js"
+      "seven-config": "src/nodes/config/config.js",
+      "seven-lookup": "src/nodes/lookup/lookup.js",
+      "seven-rcs": "src/nodes/rcs/rcs.js",
+      "seven-sms": "src/nodes/sms/sms.js",
+      "seven-voice": "src/nodes/voice/voice.js"
     }
   },
   "homepage": "https://github.com/seven-io/node-red",
@@ -38,7 +39,7 @@
   "scripts": {
     "test": "mocha \"test/**/*.spec.js\""
   },
-  "version": "4.0.0",
+  "version": "5.0.0",
   "devDependencies": {
     "mocha": "^10.8.2",
     "node-red": "^4.0.5",
