@@ -22,7 +22,6 @@ module.exports = function (RED) {
                 from: nodeUtil.emptyStringFallback('from'),
                 json: 'true' === config.json,
                 label: nodeUtil.emptyStringFallback('label'),
-                no_reload: 'true' === config.no_reload,
                 performance_tracking: 'true' === config.performance_tracking,
                 text: nodeUtil.emptyStringFallback('message', msg.payload),
                 to: nodeUtil.emptyStringFallback('recipients', msg.topic),
