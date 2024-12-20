@@ -2,7 +2,6 @@
     "sms77-sms": {
         "config": "Konfiguration",
         "delay": "Versandzeitpunkt",
-        "details": "Details?",
         "flash": "Flash?",
         "foreignId": "Foreign ID",
         "from": "Von",

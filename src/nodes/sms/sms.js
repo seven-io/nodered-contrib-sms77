@@ -16,7 +16,6 @@ module.exports = function (RED) {
 
             const params = {
                 delay: nodeUtil.emptyStringFallback('delay'),
-                details: 'true' === config.details,
                 flash: 'true' === config.flash,
                 foreign_id: nodeUtil.emptyStringFallback('foreign_id'),
                 from: nodeUtil.emptyStringFallback('from'),
@@ -33,7 +32,6 @@ module.exports = function (RED) {
                 const response = await client.sms(params)
                 let code = response
                 if (params.json) code = response.success
-                else if (params.details) code = response.split('\n')[0]
 
                 const succeeded = [100, 101].includes(Number(code))
 
